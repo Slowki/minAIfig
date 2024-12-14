@@ -1,0 +1,4 @@
+gradio_client
+openai
+requests
+rich
