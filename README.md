@@ -4,10 +4,18 @@ Generate D&D miniatures using Trellis.
 
 ## Example
 
-`python minaifig.py --output "assets/goblin.stl" --output-image "assets/goblin.png" --prompt "A goblin detective in a trench coat holding a pipe" --space http://localhost:7860/`
+**Prompt**: A goblin detective in a trench coat holding a pipe
 
-![Goblin Detective](assets/goblin.png)
-![Goblin Detective Model](assets/goblin.stl)
+<details>
+  <summary>Command</summary>
+
+  ```bash
+  python minaifig.py --output "assets/goblin.stl" --output-image "assets/goblin.png" --prompt "A goblin detective in a trench coat holding a pipe" --space http://localhost:7860/
+  ```
+</details>
+
+[3D Model](assets/goblin.stl)
+![Goblin Detective](assets/goblin_side_by_side.png)
 
 ## How it works
 
