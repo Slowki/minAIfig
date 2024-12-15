@@ -31,13 +31,13 @@ This script generates images using DALL-E, sends the image to [TRELLIS](https://
 
 - Generate from a prompt
 ```bash
-export OPENAPI_TOKEN="<TOKEN>"
+export OPENAI_API_KEY="<TOKEN>"
 python minaifig.py --output "elf.glb" --prompt "An elven ranger with a short sword and a dagger"
 ```
 
 - Generate from a prompt and save the generated image as well
 ```bash
-export OPENAPI_TOKEN="<TOKEN>"
+export OPENAI_API_KEY="<TOKEN>"
 python minaifig.py --output "elf.glb" --output-image "elf.png" --prompt "An elven ranger with a short sword and a dagger"
 ```
 
