@@ -1,4 +1,5 @@
 gradio_client
+numpy
 openai
 requests
 rich

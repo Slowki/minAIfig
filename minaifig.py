@@ -19,7 +19,7 @@ from gradio_client import Client, handle_file
 #: The base prompt to inject the user's prompt into.
 _BASE_PROMPT = """\
 {}, standing alone on a plain white background, isolated, dungeons and dragons style, square aspect ratio, sculpture.
-The base of the sculpture is a 1 inch diameter round platform.
+The base of the sculpture is a flat round platform that is 1 inch in diameter.
 Show the complete sculpture from the front.
 """
 
@@ -36,8 +36,10 @@ def generate_image(prompt: str) -> openai.types.Image:
         An image object containing the URL of the generated image.
     """
     _SPINNER.update(text="Generating image with DALL-E...")
+    prompt = _BASE_PROMPT.format(prompt)
+    rich.print(f"[yellow]Using the prompt[/yellow]:\n{prompt}")
     response = openai.images.generate(
-        prompt=_BASE_PROMPT.format(prompt),
+        prompt=prompt,
         size="1024x1024",
         model="dall-e-3",
         response_format="url",
@@ -83,12 +85,12 @@ def image_to_model(image: str, space: str, output: str) -> None:
 
     if blender := shutil.which("blender"):
         _SPINNER.update(text="Post-processing GLB...")
-        subprocess.run(
+        subprocess.check_call(
             [
                 blender,
                 "--background",
                 "--python",
-                Path(__file__).parent / "remesh.py",
+                Path(__file__).parent / "postprocess.py",
                 "--",
                 mesh_path,
                 output,
