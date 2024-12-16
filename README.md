@@ -27,6 +27,16 @@ This script generates images using DALL-E, sends the image to [TRELLIS](https://
 - (Optional) An OpenAI API key: for image generation
 - (Optional) Blender: to clean the mesh and convert from GLTF to other formats
 
+### Venv
+
+To install dependencies in a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
 ## Usage
 
 - Generate from a prompt
